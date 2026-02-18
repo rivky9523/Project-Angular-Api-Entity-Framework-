@@ -21,7 +21,7 @@ Developed by **Yehudit Pollock**, it demonstrates clean C# implementation, RESTf
 - `MyLottery.Models/` - Data Transfer Objects (DTOs) and Models.
 
 ## 🚀 Quick Start
-1. **Clone**: `git clone https://github.com/rivky9523/Project-angular-api-Entity-Framework-.git`
+1. **Clone**: `git clone https://github.com/rivky9523/Project-Angular-Api-Entity-Framework-.git`
 2. **Setup**: Run `dotnet restore`
 3. **Run**: Use `dotnet run` or press F5 in Visual Studio.
 4. **Test**: Go to `https://localhost:7063/swagger`
