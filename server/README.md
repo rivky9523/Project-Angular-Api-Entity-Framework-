@@ -2,7 +2,7 @@
 
 ## 📝 About the Project
 **My Lottery** is a robust backend system for managing lottery games. 
-Developed by **Yehudit Pollock**, it demonstrates clean C# implementation, RESTful principles, and automated logic for number generation and verification.
+Developed by **Rivky peretz**, it demonstrates clean C# implementation, RESTful principles, and automated logic for number generation and verification.
 
 ## ✨ Key Features
 - **Smart Generation**: Advanced algorithms for generating unique lottery combinations.
