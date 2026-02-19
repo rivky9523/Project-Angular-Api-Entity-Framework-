@@ -1,7 +1,6 @@
 ﻿using ex1.DTOs;
 using ex1.Interfaces.Repositorys;
 using ex1.Interfaces.Services;
-using Microsoft.Extensions.Logging;
 
 namespace ex1.services
 {
@@ -26,8 +25,10 @@ namespace ex1.services
             var entries = await _lotteryRepository.GetRaffleEntries(prizeId);
 
             if (entries.Count == 0)
-                throw new Exception("אין משתתפים להגרלה");
-
+            {
+                _logger.LogInformation("There are no participants in the lottery {PrizeId}", prizeId);
+                return null;
+            }
             var prize = await _lotteryRepository.GetPrizeById(prizeId);
 
             var random = new Random();
@@ -47,7 +48,7 @@ namespace ex1.services
             catch (Exception ex)
             {
                 emailSent = false;
-                _logger.LogError(ex, "שליחת מייל לזוכה נכשלה");
+                _logger.LogError(ex, "sending mail failed");
             }
 
             var result = new LotteryResultDto
@@ -84,7 +85,7 @@ namespace ex1.services
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "שגיאה בכתיבת קובץ סיכום הגרלה");
+                _logger.LogError(ex, "Error writing lottery summary file");
             }
         }
     }

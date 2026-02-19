@@ -156,29 +156,29 @@ namespace ex1.Data
             });
 
             // Ticket
-            modelBuilder.Entity<Ticket>(entity =>
-            {
-                entity.HasKey(t => t.Id);
+        //    modelBuilder.Entity<Ticket>(entity =>
+        //    {
+        //        entity.HasKey(t => t.Id);
 
-                entity.Property(t => t.Quantity)
-                    .IsRequired();
+        //        entity.Property(t => t.Quantity)
+        //            .IsRequired();
 
-                entity.Property(t => t.TotalPrice)
-                    .IsRequired()
-                    .HasColumnType("decimal(18,2)");
+        //        entity.Property(t => t.TotalPrice)
+        //            .IsRequired()
+        //            .HasColumnType("decimal(18,2)");
 
-                entity.HasOne(t => t.User)
-                    .WithMany(u => u.Tickets)
-                    .HasForeignKey(t => t.UserId)
-                    .IsRequired()
-                    .OnDelete(DeleteBehavior.Restrict);
+        //        entity.HasOne(t => t.User)
+        //            .WithMany(u => u.Tickets)
+        //            .HasForeignKey(t => t.UserId)
+        //            .IsRequired()
+        //            .OnDelete(DeleteBehavior.Restrict);
 
 
-                entity.HasOne(t => t.Prize)
-                    .WithMany()
-                    .HasForeignKey(t => t.PrizeId)
-                    .IsRequired();
-            });
+        //        entity.HasOne(t => t.Prize)
+        //            .WithMany()
+        //            .HasForeignKey(t => t.PrizeId)
+        //            .IsRequired();
+        //    });
         }
 
     }

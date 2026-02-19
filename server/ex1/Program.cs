@@ -48,7 +48,7 @@ try
             Scheme = "Bearer",
             BearerFormat = "JWT",
             In = ParameterLocation.Header,
-            Description = "נא להזין טוקן בלבד (ללא המילה Bearer)"
+            Description = "Please enter a token only (without the word Bearer)"
         });
 
         c.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -133,7 +133,6 @@ try
           );
     });
     var app = builder.Build();
-    //app.UseCors("allowAngular");
     if (app.Environment.IsDevelopment())
     {
         app.UseSwagger();
